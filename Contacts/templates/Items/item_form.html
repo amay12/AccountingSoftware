@@ -1,0 +1,22 @@
+{% extends "Contacts/base.html" %}
+{%  block content %}<br>
+ <div class="panel panel-default col-lg-offset-2 col-lg-8">
+                        <div class="panel-heading">
+                            <i class="fa fa-exchange fa-fw"></i> Add new Item Details
+
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="row">
+
+
+    <div class = "col-lg-10 col-lg-offset-1">
+
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {%  include 'Contacts/form_template.html' %}
+        <button class="btn btn-md btn-danger" type="submit">Submit</button>
+        </form>
+    </div>
+                            </div></div></div>
+{% endblock %}

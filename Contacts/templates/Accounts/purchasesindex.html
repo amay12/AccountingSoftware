@@ -1,0 +1,52 @@
+{% extends "Contacts/base.html" %}
+{%  block title %}Purchases Accounts {% endblock %}
+{%  block content %}
+    <br>
+    <div class="container-fluid">
+    <h2>All Your Purchases:</h2>
+    <ul>
+    {% if object_list %}
+         <table class="table table-striped table-hover ">
+          <thead>
+            <tr>
+                <th>From</th>
+                <th>Date</th>
+                <th>Due Date</th>
+                <th>References</th>
+                <th>Amount</th>
+                <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+    {%  for sales in object_list %}
+
+
+            <tr class="info">
+                <td>{{ sales.From }}</td>
+                <td>{{ sales.Date }}</td>
+                <td>{{ sales.Due_Date }}</td>
+                <td>{{ sales.References }}</td>
+                <td>{{ sales.Amount }}</td>
+                  <td>
+                       <form action="{% url 'Accounts:purchases-delete' sales.id %}" method="post" style="display: inline;">
+                        {% csrf_token %}
+                        <input type="hidden" name = "purchases_id" value=" {{ sales.id }}"/>
+                        <button type="submit" class="btn btn-default btn-sm">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+                       </form>
+
+                  </td>
+            </tr>
+
+
+    {% endfor %}
+         </tbody>
+        </table>
+    {% else %}
+        There are no Purchases!
+    {% endif %}
+        <a href="{% url 'Accounts:purchases-add' %}" class="btn btn-bg btn-danger">Add a Purchase</a>
+    </div>
+    
+{% endblock %}

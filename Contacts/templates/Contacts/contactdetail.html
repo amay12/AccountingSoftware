@@ -1,0 +1,14 @@
+{% extends "Contacts/base.html" %}
+{% block content %}
+    <br>
+    <div class="col-lg-offset-1">
+        <h1>Details of {{ allcontacts.Primary_First_name }} {{ allcontacts.Primary_Last_name }}:</h1>
+    <h2><small>Company:</small> {{ allcontacts.Company_Name }}</h2>
+    <h4><b>Email: &nbsp;</b>{{ allcontacts.Email }}<br>
+        <b>Contact No:&nbsp;</b> {{ allcontacts.Contact_No }}<br>
+        <b>Address:&nbsp;</b> {{ allcontacts.Address }}<br>
+    </h4>
+     <button class="btn btn-md"><a href="{% url 'Contacts:contact-update' allcontacts.id %}"> Edit Details</a></button>
+    <button class="btn btn-md"><a href="{% url 'Contacts:contact-index' %}"> All Contacts</a></button>
+    </div>
+{% endblock %}

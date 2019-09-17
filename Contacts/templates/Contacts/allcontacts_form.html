@@ -1,0 +1,20 @@
+{% extends "Contacts/base.html" %}
+{%  block content %}<br>
+
+    <div class = "container-fluid">
+        <h2 align="center">Add a new Contact</h2>
+        <div class="col-lg-offset-3">
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="panel panel-default col-lg-8">
+                    <div class="panel-body" >
+                        <br>
+                             {%  include 'Contacts/form_template.html' %}
+                             <button class="btn btn-primary btn-md" type="submit">Submit</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+{% endblock %}

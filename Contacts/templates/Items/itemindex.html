@@ -1,0 +1,44 @@
+{% extends "Contacts/base.html" %}
+{%  block content %}
+    <br>
+    <div class="container-fluid">
+    <h2>All Your Items:</h2>
+
+    {% if object_list %}
+         <table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+
+      <th>Item Name</th>
+      <th>Item Code</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    {%  for items in object_list %}
+
+    <tr class="info">
+      <td>
+          <a href="{% url 'Items:item-detail' items.id %}">{{ items.Item_Name }}
+           </a>&nbsp;
+      </td>
+      <td> {{ items.Item_Code }}</td>
+      <td>
+          <form action="{% url 'Items:item-delete' items.id %}" method="post" style="display: inline;">
+            {% csrf_token %}
+            <input type="hidden" name = "items_id" value=" {{ items.id }}"/>
+            <button type="submit" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-trash"></span>
+            </button>
+          </form>
+      </td>
+    </tr>
+
+    {% endfor %}
+  </tbody></table>
+    {% else %}
+        There are no Items yet!
+    {% endif %}
+    <a href="{% url 'Items:item-add' %}" class="btn btn-md btn-danger">+ Add an Item</a>
+    </div>
+{% endblock %}

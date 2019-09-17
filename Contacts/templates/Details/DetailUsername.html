@@ -1,0 +1,43 @@
+{% extends "Contacts/base.html" %}
+{%  block content %}
+    <br>
+    <div class=" container-fluid">
+    <h2>All Your Details:</h2>
+    <ul>
+    {% if object_list %}
+    {%  for details in object_list %}
+
+        <table class="table table-striped table-hover  ">
+             <tr>
+                <td>Gender: </td>
+                <td>{{ details.Gender }}</td>
+             </tr>
+             <tr>
+                <td>Contact Number: </td>
+                <td>{{ details.Contact_no }}</td>
+             </tr>
+             <tr>
+                <td>Company Name: </td>
+                <td>{{ details.Company_name }}</td>
+             </tr>
+             <tr>
+                <td>DOB: </td>
+                <td>{{ details.DOB }}</td>
+             </tr>
+             <tr>
+                <td>Address: </td>
+                <td>{{ details.Address }}</td>
+             </tr>
+
+
+</table>
+
+
+    </ul> Want to change your Details?
+         <a href="{% url 'Details:details-update' details.id %}" class="btn btn-md btn danger">Edit Details</a>
+    {% endfor %}{% else %}
+        There are no Details yet!
+        <a href="{% url 'Details:details-newadd' %}" class="btn btn-md btn danger">Add your Details NOW!</a>
+    {% endif %}
+    </div>
+{% endblock %}

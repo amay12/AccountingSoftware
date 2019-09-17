@@ -1,0 +1,26 @@
+{% extends 'Contacts/landingindex.html' %}
+{% block content %}
+    <div class="container">
+        <div class="card card-container">
+
+
+    <div class = "container-fluid">
+        <h4 align="center">Please Fill the details</h4>
+        <div class="col-lg-offset-2">
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="panel panel-default col-lg-10">
+                    <div class="panel-body">
+                        <br>
+                             {%  include 'Contacts/form_template.html' %}
+                             <button class="btn btn-primary btn-md" type="submit">Submit</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+  </div><!-- /card-container -->
+     <a href="{% url 'register:login' %}" class="btn btn-lg btn-light">Already a Member! Login.</a>
+    </div><!-- /container -->
+{% endblock %}

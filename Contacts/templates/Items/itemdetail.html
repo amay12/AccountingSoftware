@@ -1,0 +1,62 @@
+{% extends "Contacts/base.html" %}
+{% block content %}
+    <br>
+
+    <div class="panel panel-info col-lg-12 col-lg-offset- container-fluid">
+  <div class="panel-heading">
+    <h1 class="panel-title">Details of {{ item.Item_Name }} {{ item.Item_Code }}:</h1>
+  </div>
+  <div class="panel-body">
+    <div class="list-group">
+  <a href="#" class="list-group-item">
+    <h4 class="list-group-item-heading">Code:</h4>
+    <p class="list-group-item-text"><b>{{ item.Item_Code }}</b></p>
+  </a>
+        <a href="#" class="list-group-item">
+    <h4 class="list-group-item-heading">Unit Price:</h4>
+            <p class="list-group-item-text">Rs. {{ item.Unit_Price }}<br></p>
+  </a>
+        <a href="#" class="list-group-item">
+    <h4 class="list-group-item-heading">Description:</h4>
+    <p class="list-group-item-text">{{ item.Description }}<br></p>
+  </a>
+        <a href="#" class="list-group-item">
+    <h4 class="list-group-item-heading">Purchases_Account:</h4>
+    <p class="list-group-item-text">&nbsp;</b> {{ item.Purchases_Account }}</p>
+  </a>
+        <a href="#" class="list-group-item">
+    <h4 class="list-group-item-heading">Tax Rate:</h4>
+    <p class="list-group-item-text"> {{ item.Tax_Rate }}</p>
+  </a>
+  <a href="#" class="list-group-item">
+    <h4 class="list-group-item-heading">Quantity:&nbsp;</h4>
+    <p class="list-group-item-text"> {{ item.Quantity }} units</p>
+  </a>
+        <a href="#" class="list-group-item">
+    <h4 class="list-group-item-heading">Selling Price:&nbsp;</h4>
+    <p class="list-group-item-text"> {{ item.Selling_Price }} per unit</p>
+  </a>
+         <a href="#" class="list-group-item">
+    <h4 class="list-group-item-heading">Status:&nbsp;</h4>
+    <p class="list-group-item-text">  {{ item.Status }}</p>
+  </a>
+         <a href="{% url 'Items:item-update' item.id %}" class="list-group-item ">
+    <h4 class="list-group-item-heading">Edit Details</h4>
+    <p class="list-group-item-text"> </p>
+  </a>
+         <a href="{% url 'Items:item-index' %}" class="list-group-item ">
+    <h4 class="list-group-item-heading">All Items</h4>
+    <p class="list-group-item-text"> </p>
+  </a>
+</div>
+  </div>
+</div>
+    <div class="col=lg-2"></div>
+    <div class="col=lg-12">
+    <hr>
+    </div>
+    <hr><hr>
+
+
+
+{% endblock %}
