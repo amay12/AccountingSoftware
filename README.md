@@ -58,7 +58,7 @@ These instructions will get you a copy of the project up and running on your loc
 	Follow the steps on [DjangoProject](https://www.djangoproject.com/download/) to install Django.
 	
 * Start a local web server: 
-> python manage.py runserver 
+> python3 manage.py runserver 
 
 * In your browser, go to http://localhost:8000/register/index:
   > http://localhost:8000/register/index 
