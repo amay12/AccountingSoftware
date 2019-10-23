@@ -47,7 +47,7 @@ These instructions will get you a copy of the project up and running on your loc
   Navigate to an empty directory
   In command prompt:
 		
-> git clone https://github.com/amay12/AccountingSoftware.git
+> git clone https://github.com/amay12/SuperlativeAccounting.git
 
 * Install Python:
 	Install the latest version of [Python](https://www.python.org/downloads/).
