@@ -60,8 +60,7 @@ These instructions will get you a copy of the project up and running on your loc
 * Start a local web server: 
 > python3 manage.py runserver 
 
-* In your browser, go to http://localhost:8000/register/index:
-  > http://localhost:8000/register/index 
+* In your browser, go to http://localhost:8000/register/index.
 
 * Press Control+C to stop the local web server.
 
